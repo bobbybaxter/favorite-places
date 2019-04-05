@@ -1,0 +1,44 @@
+{
+  "places": [
+    {
+      "id": "city1",
+      "cityName": "Denver",
+      "cityState": "Colorado",
+      "cityImage": "https://theknow.denverpost.com/wp-content/uploads/2016/03/cdxxDENVERSKYLINE__HHR7835-001.jpg",
+      "favoriteRestaurant": "Buckhorn Exchange",
+      "favoriteBar": "The Bar Car",
+      "favoriteHotel": "the ART",
+      "favoriteTouristAttraction": "Fifty-Two 80's"
+    },
+    {
+      "id": "city1",
+      "cityName": "Annapolis",
+      "cityState": "Maryland",
+      "cityImage": "http://www.hello-dmc.com/MediaLibrary/Destinations/Annapolis/Annapolis-City-Center.jpg",
+      "favoriteRestaurant": "Chick and Ruth's Deli",
+      "favoriteBar": "Rams Head on Stage",
+      "favoriteHotel": "The Maryland Inn",
+      "favoriteTouristAttraction": "John Paul Jones' Crypt"
+    },
+    {
+      "id": "city1",
+      "cityName": "Chicago",
+      "cityState": "Illinois",
+      "cityImage": "http://indusinstruments.com/wp-content/uploads/2018/01/chicago-header-dg1115.jpg",
+      "favoriteRestaurant": "Frontier",
+      "favoriteBar": "Booze Box",
+      "favoriteHotel": "The Robey",
+      "favoriteTouristAttraction": "Woolly Mammoth Antiques and Oddities"
+    },
+    {
+      "id": "city1",
+      "cityName": "Seattle",
+      "cityState": "Washington",
+      "cityImage": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg",
+      "favoriteRestaurant": "The Herbfarm",
+      "favoriteBar": "Axe Kickers",
+      "favoriteHotel": "The Ace",
+      "favoriteTouristAttraction": "Mystery Soda Machine"
+    }
+  ]
+}
