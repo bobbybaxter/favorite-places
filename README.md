@@ -40,7 +40,7 @@ One-page locally hosted site to work on data creation in a JSON file and vanilla
 - then we invoked `init()`
 
 ## Screenshots
-![image of personal bio website](https://raw.githubusercontent.com/bobbybaxter/personal-bio-site/master/images/favorite-places-screenshot.png)
+![image of personal bio website](https://raw.githubusercontent.com/bobbybaxter/favorite-places/master/images/favorite-places-screenshot.png)
 
 ## Getting Started
 Clone the repo:
