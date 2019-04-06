@@ -1,6 +1,4 @@
-const cityBtn = document.getElementById('city-btn');
-const stateBtn = document.getElementById('state-btn');
-const defaultBtn = document.getElementById('default-btn');
+const navButtons = document.getElementsByClassName('nav-item');
 let places = [];
 
 const printToDom = (divId, textToPrint) => {
@@ -8,18 +6,15 @@ const printToDom = (divId, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 };
 
-const citySorter = () => {
-  places.sort((a,b) => (a.cityName > b.cityName) ? 1: -1);
-  domStringBuilder();
-};
-
-const stateSorter = () => {
-  places.sort((a,b) => (a.cityState > b.cityState) ? 1: -1);
-  domStringBuilder();
-};
-
-const defaultSorter = () => {
-  places.sort((a,b) => (a.id > b.id) ? 1: -1);
+const cardSorter = (e) => {
+  const navId = e.target.id;
+  if (navId === 'default-btn') {
+    places.sort((a,b) => (a.cityId > b.cityId) ? 1: -1);
+  } else if (navId === 'city-btn') {
+    places.sort((a,b) => (a.cityName > b.cityName) ? 1: -1);
+  } else if (navId === 'state-btn') {
+    places.sort((a,b) => (a.cityState > b.cityState) ? 1: -1);
+  };
   domStringBuilder();
 };
 
@@ -58,8 +53,8 @@ const domStringBuilder = (city) => {
 
 function loadSuccess(){
   const data = JSON.parse(this.responseText);
-  places = data.places;
-  domStringBuilder(places); // should this be data.places? 
+  let places = data.places;
+  domStringBuilder(places);
 };
 
 function loadFailure(){
@@ -71,14 +66,13 @@ const getPlacesData = () => {
   myRequest.addEventListener('load', loadSuccess);
   myRequest.addEventListener('error', loadFailure);
   myRequest.open('GET', './db/places.json');
-  console.log(myRequest);
   myRequest.send();
 };
 
 const eventListeners = () => {
-  cityBtn.addEventListener('click', citySorter);
-  stateBtn.addEventListener('click', stateSorter);
-  defaultBtn.addEventListener('click', defaultSorter);
+  for (let i = 0; i < navButtons.length; i++) {
+    navButtons[i].addEventListener('click', cardSorter);
+  };
 };
 
 const init = () => {
