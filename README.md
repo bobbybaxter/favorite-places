@@ -1,7 +1,32 @@
 # Favorite Places
 One-page locally hosted site to work on data creation in a JSON file and vanilla XHR Requests.
 
-### Under the Hood
+## Screenshots
+![image of personal bio website](https://raw.githubusercontent.com/bobbybaxter/favorite-places/master/images/favorite-places-screenshot.png)
+
+## Getting Started
+Clone the repo:
+```
+$git clone https://github.com/bobbybaxter/favorite-places
+```
+
+### Prerequisites
+Download HTTP Server, to be able to serve the site locally in your browser:
+```
+$npm install -g http-server
+```
+
+## Running
+Browse to the favorite-places/ directory and run HTTP Server by typing the following command into the terminal:
+```
+$ hs -p 5000
+```
+
+In your web browser, copy and paste this:
+
+ `localhost:5000`
+
+ ### Under the Hood
 #### places.json
 - i've created a `.json` file that includes my favorite cities so that i can practice accessing data via an asyncronous XMLHttpRequest in Javascript.
 
@@ -38,28 +63,3 @@ One-page locally hosted site to work on data creation in a JSON file and vanilla
 ##### Execution
 - our `init` function first runs `getPlacesData()` then runs `eventListeners`
 - then we invoked `init()`
-
-## Screenshots
-![image of personal bio website](https://raw.githubusercontent.com/bobbybaxter/favorite-places/master/images/favorite-places-screenshot.png)
-
-## Getting Started
-Clone the repo:
-```
-$git clone https://github.com/bobbybaxter/favorite-places
-```
-
-### Prerequisites
-Download HTTP Server, to be able to serve the site locally in your browser:
-```
-$npm install -g http-server
-```
-
-## Running
-Browse to the favorite-places/ directory and run HTTP Server by typing the following command into the terminal:
-```
-$ hs -p 5000
-```
-
-In your web browser, copy and paste this:
-
- `localhost:5000`
