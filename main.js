@@ -1,9 +1,22 @@
+const navButtons = document.getElementsByClassName('nav-item');
 let places = [];
 
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.getElementById(divId);
   selectedDiv.innerHTML = textToPrint;
-}
+};
+
+const cardSorter = (e) => {
+  const navId = e.target.id;
+  if (navId === 'default-btn') {
+    places.sort((a,b) => (a.cityId > b.cityId) ? 1: -1);
+  } else if (navId === 'city-btn') {
+    places.sort((a,b) => (a.cityName > b.cityName) ? 1: -1);
+  } else if (navId === 'state-btn') {
+    places.sort((a,b) => (a.cityState > b.cityState) ? 1: -1);
+  };
+  domStringBuilder();
+};
 
 const domStringBuilder = (city) => {
   let domString = '';
@@ -40,25 +53,31 @@ const domStringBuilder = (city) => {
 
 function loadSuccess(){
   const data = JSON.parse(this.responseText);
-  places = data.places;
-  domStringBuilder(places); // should this be data.places? 
+  let places = data.places;
+  domStringBuilder(places);
 };
 
 function loadFailure(){
   console.error('doh!');
-}
+};
 
 const getPlacesData = () => {
   const myRequest = new XMLHttpRequest();
   myRequest.addEventListener('load', loadSuccess);
   myRequest.addEventListener('error', loadFailure);
   myRequest.open('GET', './db/places.json');
-  console.log(myRequest);
   myRequest.send();
+};
+
+const eventListeners = () => {
+  for (let i = 0; i < navButtons.length; i++) {
+    navButtons[i].addEventListener('click', cardSorter);
+  };
 };
 
 const init = () => {
   getPlacesData();
+  eventListeners();
 };
 
 init();
