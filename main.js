@@ -1,9 +1,27 @@
+const cityBtn = document.getElementById('city-btn');
+const stateBtn = document.getElementById('state-btn');
+const defaultBtn = document.getElementById('default-btn');
 let places = [];
 
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.getElementById(divId);
   selectedDiv.innerHTML = textToPrint;
-}
+};
+
+const citySorter = () => {
+  places.sort((a,b) => (a.cityName > b.cityName) ? 1: -1);
+  domStringBuilder();
+};
+
+const stateSorter = () => {
+  places.sort((a,b) => (a.cityState > b.cityState) ? 1: -1);
+  domStringBuilder();
+};
+
+const defaultSorter = () => {
+  places.sort((a,b) => (a.id > b.id) ? 1: -1);
+  domStringBuilder();
+};
 
 const domStringBuilder = (city) => {
   let domString = '';
@@ -46,7 +64,7 @@ function loadSuccess(){
 
 function loadFailure(){
   console.error('doh!');
-}
+};
 
 const getPlacesData = () => {
   const myRequest = new XMLHttpRequest();
@@ -57,8 +75,15 @@ const getPlacesData = () => {
   myRequest.send();
 };
 
+const eventListeners = () => {
+  cityBtn.addEventListener('click', citySorter);
+  stateBtn.addEventListener('click', stateSorter);
+  defaultBtn.addEventListener('click', defaultSorter);
+};
+
 const init = () => {
   getPlacesData();
+  eventListeners();
 };
 
 init();
