@@ -53,9 +53,9 @@ const domStringBuilder = (city) => {
 
 function loadSuccess(){
   const data = JSON.parse(this.responseText);
-  let places = data.places;
+  places = data.places;
   domStringBuilder(places);
-};
+;};
 
 function loadFailure(){
   console.error('doh!');
